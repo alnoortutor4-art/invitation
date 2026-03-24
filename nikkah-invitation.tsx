@@ -3,71 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { useState, useEffect, useRef } from "react"
 
-const Animations = () => (
-  <style jsx>{`
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInScale {
-      from { opacity: 0; transform: scale(0.9); }
-      to   { opacity: 1; transform: scale(1); }
-    }
-    @keyframes slideInLeft {
-      from { opacity: 0; transform: translateX(-50px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes slideInRight {
-      from { opacity: 0; transform: translateX(50px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50%       { transform: scale(1.02); }
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-    @keyframes shimmer {
-      0% { opacity: 0.3; }
-      50% { opacity: 0.6; }
-      100% { opacity: 0.3; }
-    }
-    @keyframes gentleBounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-    @keyframes scaleIn {
-      from { opacity: 0; transform: scale(0.8); }
-      to   { opacity: 1; transform: scale(1); }
-    }
-
-    .fade-in { animation: fadeIn 1s ease-out; }
-    .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
-    .fade-in-scale { animation: fadeInScale 0.6s ease-out forwards; }
-    .slide-in-left { animation: slideInLeft 0.8s ease-out forwards; }
-    .slide-in-right { animation: slideInRight 0.8s ease-out forwards; }
-    .pulse   { animation: pulse 3s ease-in-out infinite; }
-    .float   { animation: float 4s ease-in-out infinite; }
-    .shimmer { animation: shimmer 3s ease-in-out infinite; }
-    .gentle-bounce { animation: gentleBounce 2s ease-in-out infinite; }
-    .scale-in { animation: scaleIn 0.5s ease-out forwards; }
-    
-    .delay-100 { animation-delay: 0.1s; opacity: 0; }
-    .delay-200 { animation-delay: 0.2s; opacity: 0; }
-    .delay-300 { animation-delay: 0.3s; opacity: 0; }
-    .delay-400 { animation-delay: 0.4s; opacity: 0; }
-    .delay-500 { animation-delay: 0.5s; opacity: 0; }
-    .delay-600 { animation-delay: 0.6s; opacity: 0; }
-    .delay-700 { animation-delay: 0.7s; opacity: 0; }
-    .delay-800 { animation-delay: 0.8s; opacity: 0; }
-  `}</style>
-)
+// Animations are now defined in globals.css
 
 // Decorative floral corner component
 const FloralCorner = ({ position }: { position: "top-left" | "top-right" | "bottom-left" | "bottom-right" }) => {
@@ -245,7 +181,7 @@ export default function Component() {
   if (currentPage === "cover") {
     return (
       <div className="min-h-screen relative overflow-hidden flex items-center justify-center p-4">
-        <Animations />
+        
         
         {/* Video background */}
         <video
@@ -323,7 +259,7 @@ export default function Component() {
   if (currentPage === "loading") {
     return (
       <div className="min-h-screen relative overflow-hidden flex items-center justify-center p-4">
-        <Animations />
+        
         
         {/* Watercolor background */}
         <div 
@@ -382,7 +318,7 @@ export default function Component() {
   // ─── Main Invitation Page ─────────────────────────────────────────────────────
   return (
     <div className="min-h-screen relative overflow-hidden fade-in">
-      <Animations />
+      
       
       {/* Base background */}
       <div 
