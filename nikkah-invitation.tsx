@@ -76,25 +76,25 @@ const Petal = ({ className, color }: { className: string; color: string }) => (
 
 const FloatingPetals = () => (
   <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-    {/* Pink petals */}
-    <Petal className="petal-1 absolute bottom-0 left-[8%] w-5 h-5 opacity-70" color="#f9a8d4" />
-    <Petal className="petal-4 absolute bottom-0 left-[22%] w-4 h-4 opacity-60" color="#fbcfe8" />
-    <Petal className="petal-7 absolute bottom-0 left-[65%] w-6 h-6 opacity-70" color="#f472b6" />
-    <Petal className="petal-10 absolute bottom-0 left-[85%] w-4 h-4 opacity-55" color="#fce7f3" />
+    {/* Warm dusty rose petals */}
+    <Petal className="petal-1 absolute bottom-0 left-[8%] w-5 h-5 opacity-70" color="#d4a5a5" />
+    <Petal className="petal-4 absolute bottom-0 left-[22%] w-4 h-4 opacity-60" color="#d4a5a5" />
+    <Petal className="petal-7 absolute bottom-0 left-[65%] w-6 h-6 opacity-70" color="#d4a5a5" />
+    <Petal className="petal-10 absolute bottom-0 left-[85%] w-4 h-4 opacity-55" color="#e8dcc8" />
 
-    {/* Lilac / light purple petals */}
-    <Petal className="petal-2 absolute bottom-0 left-[35%] w-5 h-5 opacity-65" color="#d8b4fe" />
-    <Petal className="petal-5 absolute bottom-0 left-[50%] w-4 h-4 opacity-55" color="#ede9fe" />
-    <Petal className="petal-8 absolute bottom-0 left-[75%] w-6 h-6 opacity-60" color="#c4b5fd" />
+    {/* Warm terracotta petals */}
+    <Petal className="petal-2 absolute bottom-0 left-[35%] w-5 h-5 opacity-65" color="#a47060" />
+    <Petal className="petal-5 absolute bottom-0 left-[50%] w-4 h-4 opacity-55" color="#f0e6d8" />
+    <Petal className="petal-8 absolute bottom-0 left-[75%] w-6 h-6 opacity-60" color="#9b6b5c" />
 
-    {/* White petals */}
+    {/* Cream/white petals */}
     <Petal className="petal-3 absolute bottom-0 left-[14%] w-4 h-4 opacity-50" color="#ffffff" />
-    <Petal className="petal-9 absolute bottom-0 left-[58%] w-5 h-5 opacity-45" color="#f5f3ff" />
+    <Petal className="petal-9 absolute bottom-0 left-[58%] w-5 h-5 opacity-45" color="#f0e6d8" />
 
-    {/* Sea green petals */}
-    <Petal className="petal-6 absolute bottom-0 left-[42%] w-4 h-4 opacity-55" color="#6ee7b7" />
-    <Petal className="petal-11 absolute bottom-0 left-[28%] w-5 h-5 opacity-50" color="#a7f3d0" />
-    <Petal className="petal-12 absolute bottom-0 left-[92%] w-4 h-4 opacity-60" color="#34d399" />
+    {/* Warm beige petals */}
+    <Petal className="petal-6 absolute bottom-0 left-[42%] w-4 h-4 opacity-55" color="#e8dcc8" />
+    <Petal className="petal-11 absolute bottom-0 left-[28%] w-5 h-5 opacity-50" color="#d4a5a5" />
+    <Petal className="petal-12 absolute bottom-0 left-[92%] w-4 h-4 opacity-60" color="#a47060" />
   </div>
 )
 
@@ -225,7 +225,7 @@ export default function Component() {
   // ─── Cover Page ───────────────────────────────────────────────────────────────
   if (currentPage === "cover") {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-purple-50 via-violet-50 to-purple-100 flex items-center justify-center p-4 relative overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-b from-[#f0e6d8] via-[#e8dcc8] to-[#f0e6d8] flex items-center justify-center p-4 relative overflow-hidden">
         <Animations />
         <FloatingPetals />
 
@@ -235,7 +235,7 @@ export default function Component() {
 
         <div className="text-center space-y-12 max-w-md mx-auto relative z-10">
           <h1
-            className="text-5xl text-violet-900 font-normal leading-tight"
+            className="text-5xl text-[#9b6b5c] font-normal leading-tight"
             style={{ fontFamily: "Great Vibes, cursive" }}
           >
             Nikkah Invitation
@@ -243,7 +243,7 @@ export default function Component() {
 
           {/* Monogram */}
           <div className="relative pulse">
-            <div className="w-80 h-80 mx-auto rounded-full bg-white/90 backdrop-blur-sm p-4 shadow-2xl ring-4 ring-purple-200/60">
+            <div className="w-80 h-80 mx-auto rounded-full bg-white/90 backdrop-blur-sm p-4 shadow-2xl ring-4 ring-[#d4a5a5]/60">
               <div className="w-full h-full rounded-full overflow-hidden">
                 <img
                   src="/monogram.png"
@@ -254,14 +254,14 @@ export default function Component() {
               </div>
             </div>
             {/* Decorative petals around monogram */}
-            <Petal className="absolute top-6 right-10 w-6 h-6 opacity-50" color="#d8b4fe" />
-            <Petal className="absolute bottom-10 left-6 w-5 h-5 opacity-50" color="#f9a8d4" />
-            <Petal className="absolute top-20 left-10 w-4 h-4 opacity-40" color="#6ee7b7" />
-            <Petal className="absolute bottom-18 right-6 w-4 h-4 opacity-45" color="#c4b5fd" />
+            <Petal className="absolute top-6 right-10 w-6 h-6 opacity-50" color="#d4a5a5" />
+            <Petal className="absolute bottom-10 left-6 w-5 h-5 opacity-50" color="#d4a5a5" />
+            <Petal className="absolute top-20 left-10 w-4 h-4 opacity-40" color="#e8dcc8" />
+            <Petal className="absolute bottom-18 right-6 w-4 h-4 opacity-45" color="#a47060" />
           </div>
 
           <div
-            className="text-3xl text-violet-900 font-normal tracking-wider"
+            className="text-3xl text-[#9b6b5c] font-normal tracking-wider"
             style={{ fontFamily: "Montserrat, sans-serif" }}
           >
             ٱلْـحَـمْدُ لِلّٰهِ
@@ -270,7 +270,7 @@ export default function Component() {
           <div className="pt-2">
             <Button
               onClick={handleOpenInvitation}
-              className="bg-violet-700 hover:bg-violet-800 text-white rounded-full px-12 py-4 text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              className="bg-[#a47060] hover:bg-[#9b6b5c] text-white rounded-full px-12 py-4 text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
               Open Invitation
@@ -284,13 +284,13 @@ export default function Component() {
   // ─── Loading Page ─────────────────────────────────────────────────────────────
   if (currentPage === "loading") {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-purple-50 via-violet-50 to-purple-100 flex items-center justify-center p-4 relative overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-b from-[#f0e6d8] via-[#e8dcc8] to-[#f0e6d8] flex items-center justify-center p-4 relative overflow-hidden">
         <Animations />
         <FloatingPetals />
 
         <div className="text-center space-y-12 max-w-md mx-auto relative z-10">
           <div className="relative pulse">
-            <div className="w-64 h-64 mx-auto rounded-full bg-white/90 backdrop-blur-sm p-4 shadow-2xl ring-4 ring-purple-200/60">
+            <div className="w-64 h-64 mx-auto rounded-full bg-white/90 backdrop-blur-sm p-4 shadow-2xl ring-4 ring-[#d4a5a5]/60">
               <div className="w-full h-full rounded-full overflow-hidden">
                 <img
                   src="/monogram.png"
@@ -303,18 +303,18 @@ export default function Component() {
           </div>
 
           <div className="space-y-6">
-            <div className="text-2xl text-violet-900 font-normal" style={{ fontFamily: "Great Vibes, cursive" }}>
+            <div className="text-2xl text-[#9b6b5c] font-normal" style={{ fontFamily: "Great Vibes, cursive" }}>
               Loading Invitation...
             </div>
             <div className="w-full max-w-xs mx-auto">
               <div className="bg-white/50 rounded-full h-3 shadow-inner">
                 <div
-                  className="bg-gradient-to-r from-violet-500 to-purple-700 h-3 rounded-full transition-all duration-100 ease-out"
+                  className="bg-gradient-to-r from-[#d4a5a5] to-[#a47060] h-3 rounded-full transition-all duration-100 ease-out"
                   style={{ width: `${loadingProgress}%` }}
                 ></div>
               </div>
               <div
-                className="text-lg font-semibold text-violet-900 mt-3"
+                className="text-lg font-semibold text-[#9b6b5c] mt-3"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
                 {loadingProgress}%
@@ -328,7 +328,7 @@ export default function Component() {
 
   // ─── Main Invitation Page ─────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 via-violet-50 to-purple-100 p-4 relative overflow-hidden fade-in">
+    <div className="min-h-screen bg-gradient-to-b from-[#f0e6d8] via-[#e8dcc8] to-[#f0e6d8] p-4 relative overflow-hidden fade-in">
       <Animations />
       <FloatingPetals />
 
@@ -423,11 +423,11 @@ Syed Usman Hussain & Shafaq Amin
           </div>
 
           <div className="flex items-center justify-center space-x-6">
-            <div className="w-16 h-px bg-gradient-to-r from-transparent to-purple-400"></div>
-            <div className="text-3xl font-light text-violet-800" style={{ fontFamily: "Playfair Display, serif" }}>
+            <div className="w-16 h-px bg-gradient-to-r from-transparent to-[#d4a5a5]"></div>
+            <div className="text-3xl font-light text-[#9b6b5c]" style={{ fontFamily: "Playfair Display, serif" }}>
               with
             </div>
-            <div className="w-16 h-px bg-gradient-to-l from-transparent to-purple-400"></div>
+            <div className="w-16 h-px bg-gradient-to-l from-transparent to-[#d4a5a5]"></div>
           </div>
 
           <div className="space-y-2">
@@ -513,9 +513,9 @@ Syed Usman Hussain & Shafaq Amin
                 {/* Date — clickable for calendar reminder */}
                 <div
                   onClick={handleSaveTheDate}
-                  className="flex flex-col items-center space-y-3 p-6 border border-purple-200/60 rounded-2xl bg-gradient-to-br from-white to-purple-50/40 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer hover:scale-105"
+                  className="flex flex-col items-center space-y-3 p-6 border border-[#d4a5a5]/60 rounded-2xl bg-gradient-to-br from-white to-[#f0e6d8]/40 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer hover:scale-105"
                 >
-                  <Calendar className="w-8 h-8 mb-2 text-violet-700" />
+                  <Calendar className="w-8 h-8 mb-2 text-[#a47060]" />
                   <div className="text-center">
                     <div className="font-semibold text-gray-800 mb-1 text-xl" style={{ fontFamily: "Playfair Display, serif" }}>
                       Date
@@ -523,15 +523,15 @@ Syed Usman Hussain & Shafaq Amin
                     <div className="text-lg text-gray-600 font-light" style={{ fontFamily: "Montserrat, sans-serif" }}>
                       Friday, 3 April 2026
                     </div>
-                    <div className="text-xs text-violet-600 mt-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                    <div className="text-xs text-[#a47060] mt-2" style={{ fontFamily: "Montserrat, sans-serif" }}>
                       Tap to set reminder
                     </div>
                   </div>
                 </div>
 
                 {/* Time */}
-                <div className="flex flex-col items-center space-y-3 p-6 border border-purple-200/60 rounded-2xl bg-gradient-to-br from-white to-purple-50/40 shadow-sm hover:shadow-md transition-all duration-300">
-                  <Clock className="w-8 h-8 mb-2 text-violet-700" />
+                <div className="flex flex-col items-center space-y-3 p-6 border border-[#d4a5a5]/60 rounded-2xl bg-gradient-to-br from-white to-[#f0e6d8]/40 shadow-sm hover:shadow-md transition-all duration-300">
+                  <Clock className="w-8 h-8 mb-2 text-[#a47060]" />
                   <div className="text-center">
                     <div className="font-semibold text-gray-800 mb-1 text-xl" style={{ fontFamily: "Playfair Display, serif" }}>
                       Time
@@ -543,8 +543,8 @@ Syed Usman Hussain & Shafaq Amin
                 </div>
 
                 {/* Venue */}
-                <div className="flex flex-col items-center space-y-4 p-6 border border-purple-200/60 rounded-2xl bg-gradient-to-br from-white to-purple-50/40 shadow-sm hover:shadow-md transition-all duration-300">
-                  <MapPin className="w-8 h-8 mb-2 text-violet-700" />
+                <div className="flex flex-col items-center space-y-4 p-6 border border-[#d4a5a5]/60 rounded-2xl bg-gradient-to-br from-white to-[#f0e6d8]/40 shadow-sm hover:shadow-md transition-all duration-300">
+                  <MapPin className="w-8 h-8 mb-2 text-[#a47060]" />
                   <div className="text-center space-y-3">
                     <div className="font-semibold text-gray-800 text-xl" style={{ fontFamily: "Playfair Display, serif" }}>
                       Venue
@@ -592,7 +592,7 @@ Syed Usman Hussain & Shafaq Amin
             </div>
 
             {/* RSVP */}
-            <div className="text-center space-y-4 p-6 bg-gradient-to-br from-purple-50/20 to-transparent rounded-lg">
+            <div className="text-center space-y-4 p-6 bg-gradient-to-br from-[#f0e6d8]/20 to-transparent rounded-lg">
               <div className="font-semibold text-gray-800 text-xl" style={{ fontFamily: "Playfair Display, serif" }}>
                 RSVP
               </div>
