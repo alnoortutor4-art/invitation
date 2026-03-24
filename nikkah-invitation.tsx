@@ -208,24 +208,19 @@ export default function Component() {
       <div className="min-h-screen relative overflow-hidden flex items-center justify-center p-4">
         <Animations />
         
-        {/* Watercolor background */}
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: `
-              radial-gradient(ellipse at top, #f0e6d8 0%, transparent 50%),
-              radial-gradient(ellipse at bottom right, #d4a5a5 0%, transparent 40%),
-              radial-gradient(ellipse at bottom left, #e8dcc8 0%, transparent 40%),
-              linear-gradient(to bottom, #f0e6d8, #e8dcc8)
-            `
-          }}
-        />
+        {/* Video background */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pink%20White%20Elegant%20Watercolor%20International%20Women%27s%20Day%208%20March%20Greeting%20VIdeo-9zCZ1DWn8iwdBukTsumQpBlKjkW7sz.mp4" type="video/mp4" />
+        </video>
         
-        {/* Decorative corners */}
-        <FloralCorner position="top-left" />
-        <FloralCorner position="top-right" />
-        <FloralCorner position="bottom-left" />
-        <FloralCorner position="bottom-right" />
+        {/* Subtle overlay for text readability */}
+        <div className="absolute inset-0 bg-white/20" />
 
         <div style={{ display: "none" }}>
           <audio ref={audioRef} preload="auto" />
@@ -234,7 +229,7 @@ export default function Component() {
         <div className="text-center space-y-10 max-w-md mx-auto relative z-10 fade-in">
           <div className="space-y-2">
             <p 
-              className="text-[#9b6b5c] text-lg tracking-widest uppercase"
+              className="text-[#5a4a42] text-lg tracking-widest uppercase drop-shadow-sm"
               style={{ fontFamily: "Cormorant Garamond, serif" }}
             >
               The Nikkah Of
@@ -244,19 +239,19 @@ export default function Component() {
           {/* Names in elegant script */}
           <div className="space-y-4">
             <h1
-              className="text-6xl md:text-7xl text-[#9b6b5c] font-normal leading-tight"
+              className="text-6xl md:text-7xl text-[#4a3a32] font-normal leading-tight drop-shadow-sm"
               style={{ fontFamily: "Great Vibes, cursive" }}
             >
               Usman
             </h1>
             <p 
-              className="text-3xl text-[#a47060]"
+              className="text-3xl text-[#5a4a42] drop-shadow-sm"
               style={{ fontFamily: "Great Vibes, cursive" }}
             >
               &
             </p>
             <h1
-              className="text-6xl md:text-7xl text-[#9b6b5c] font-normal leading-tight"
+              className="text-6xl md:text-7xl text-[#4a3a32] font-normal leading-tight drop-shadow-sm"
               style={{ fontFamily: "Great Vibes, cursive" }}
             >
               Shafaq
@@ -265,7 +260,7 @@ export default function Component() {
 
           {/* Arabic blessing */}
           <div
-            className="text-2xl text-[#a47060] font-normal tracking-wider"
+            className="text-2xl text-[#5a4a42] font-normal tracking-wider drop-shadow-sm"
             style={{ fontFamily: "Amiri, serif" }}
           >
             ٱلْـحَـمْدُ لِلّٰهِ
@@ -274,26 +269,12 @@ export default function Component() {
           <div className="pt-4">
             <Button
               onClick={handleOpenInvitation}
-              className="bg-[#a47060] hover:bg-[#9b6b5c] text-white rounded-full px-12 py-4 text-base font-medium shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 tracking-wider"
+              className="bg-[#6b5548] hover:bg-[#5a4a42] text-white rounded-full px-12 py-4 text-base font-medium shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 tracking-wider"
               style={{ fontFamily: "Cormorant Garamond, serif" }}
             >
               Open Invitation
             </Button>
           </div>
-        </div>
-
-        {/* Bottom floral decoration */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <img 
-            src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=800&q=80" 
-            alt="Floral decoration"
-            className="w-full h-48 object-cover object-top opacity-80"
-            style={{ 
-              maskImage: "linear-gradient(to top, black 40%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(to top, black 40%, transparent 100%)"
-            }}
-            crossOrigin="anonymous"
-          />
         </div>
       </div>
     )
@@ -364,15 +345,43 @@ export default function Component() {
     <div className="min-h-screen relative overflow-hidden fade-in">
       <Animations />
       
-      {/* Watercolor background */}
+      {/* Base background */}
       <div 
-        className="fixed inset-0"
+        className="fixed inset-0 bg-white"
+      />
+      
+      {/* Left side floral PNG with gradient blend */}
+      <div className="fixed left-0 top-0 bottom-0 w-1/3 md:w-1/4 pointer-events-none z-0">
+        <img 
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Purple%20And%20White%20Floral%20Wedding%20Invitation-YdOvTGAJpP8CyX4Z5ZG3QV60gFLstr.png"
+          alt=""
+          className="h-full w-full object-contain object-left"
+          style={{
+            maskImage: "linear-gradient(to right, black 50%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to right, black 50%, transparent 100%)"
+          }}
+        />
+      </div>
+      
+      {/* Right side floral border PNG with gradient blend */}
+      <div className="fixed right-0 top-0 bottom-0 w-1/3 md:w-1/4 pointer-events-none z-0">
+        <img 
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Purple%20Gold%20Aesthetic%20Watercolor%20Flower%20Wedding%20Invitation-Il0NXMgjPY56xfR0WIspOPUsqUT0Pw.png"
+          alt=""
+          className="h-full w-full object-cover object-right"
+          style={{
+            maskImage: "linear-gradient(to left, black 60%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to left, black 60%, transparent 100%)"
+          }}
+        />
+      </div>
+      
+      {/* Center gradient overlay for text readability */}
+      <div 
+        className="fixed inset-0 pointer-events-none z-0"
         style={{
           background: `
-            radial-gradient(ellipse at top, #f0e6d8 0%, transparent 60%),
-            radial-gradient(ellipse at 80% 20%, #d4a5a5 0%, transparent 30%),
-            radial-gradient(ellipse at 20% 80%, #e8dcc8 0%, transparent 40%),
-            linear-gradient(to bottom, #f0e6d8, #e8dcc8, #f0e6d8)
+            radial-gradient(ellipse at center, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 50%, transparent 80%)
           `
         }}
       />
@@ -402,7 +411,7 @@ export default function Component() {
         {/* Header Section */}
         <div className="text-center space-y-6 mb-12">
           <p 
-            className="text-[#a47060] text-sm tracking-[0.3em] uppercase"
+            className="text-[#6b4a3c] text-sm tracking-[0.3em] uppercase font-medium"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
           >
             Bismillahir Rahmanir Raheem
@@ -410,7 +419,7 @@ export default function Component() {
           
           <div className="space-y-1">
             <p 
-              className="text-[#9b6b5c] text-lg tracking-widest"
+              className="text-[#5a3d32] text-lg tracking-widest"
               style={{ fontFamily: "Cormorant Garamond, serif" }}
             >
               The Nikkah Ceremony Of
@@ -421,19 +430,19 @@ export default function Component() {
         {/* Names Section */}
         <div className="text-center space-y-4 mb-12">
           <h1
-            className="text-6xl md:text-7xl text-[#9b6b5c] font-normal leading-tight"
+            className="text-6xl md:text-7xl text-[#4a3228] font-normal leading-tight"
             style={{ fontFamily: "Great Vibes, cursive" }}
           >
             Syed Usman
           </h1>
           <p 
-            className="text-4xl text-[#a47060]"
+            className="text-4xl text-[#6b4a3c]"
             style={{ fontFamily: "Great Vibes, cursive" }}
           >
             &
           </p>
           <h1
-            className="text-6xl md:text-7xl text-[#9b6b5c] font-normal leading-tight"
+            className="text-6xl md:text-7xl text-[#4a3228] font-normal leading-tight"
             style={{ fontFamily: "Great Vibes, cursive" }}
           >
             Shafaq
@@ -443,37 +452,37 @@ export default function Component() {
         {/* Date Section - Reference Style Layout */}
         <div className="text-center space-y-6 mb-12">
           <p 
-            className="text-[#a47060] text-sm tracking-[0.4em] uppercase"
+            className="text-[#6b4a3c] text-sm tracking-[0.4em] uppercase font-medium"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
           >
             April
           </p>
           
           <div className="flex items-center justify-center gap-4">
-            <div className="w-20 h-px bg-[#d4a5a5]" />
+            <div className="w-20 h-px bg-[#b8928a]" />
             <span 
-              className="text-[#9b6b5c] text-sm tracking-[0.2em] uppercase"
+              className="text-[#5a3d32] text-sm tracking-[0.2em] uppercase font-medium"
               style={{ fontFamily: "Cormorant Garamond, serif" }}
             >
               Friday
             </span>
             <span 
-              className="text-6xl text-[#9b6b5c] font-light"
+              className="text-6xl text-[#5a3d32] font-light"
               style={{ fontFamily: "Cormorant Garamond, serif" }}
             >
               3
             </span>
             <span 
-              className="text-[#9b6b5c] text-sm tracking-[0.2em] uppercase"
+              className="text-[#5a3d32] text-sm tracking-[0.2em] uppercase font-medium"
               style={{ fontFamily: "Cormorant Garamond, serif" }}
             >
               Baad Asr
             </span>
-            <div className="w-20 h-px bg-[#d4a5a5]" />
+            <div className="w-20 h-px bg-[#b8928a]" />
           </div>
           
           <p 
-            className="text-[#a47060] text-sm tracking-[0.4em] uppercase"
+            className="text-[#6b4a3c] text-sm tracking-[0.4em] uppercase font-medium"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
           >
             2026
@@ -483,13 +492,13 @@ export default function Component() {
         {/* Venue Section */}
         <div className="text-center space-y-4 mb-12">
           <p 
-            className="text-[#9b6b5c] text-base tracking-[0.2em] uppercase"
+            className="text-[#5a3d32] text-base tracking-[0.2em] uppercase font-medium"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
           >
             Quran Academy
           </p>
           <p 
-            className="text-[#a47060] text-sm tracking-wider"
+            className="text-[#6b4a3c] text-sm tracking-wider font-medium"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
           >
             Yaseenabad Branch
@@ -498,7 +507,7 @@ export default function Component() {
           <Button
             onClick={handleLocationClick}
             variant="outline"
-            className="mt-4 border-[#d4a5a5] text-[#9b6b5c] hover:bg-[#e8dcc8]/50 rounded-full px-8 py-2 text-sm tracking-wider transition-all duration-300"
+            className="mt-4 border-[#b8928a] text-[#5a3d32] hover:bg-[#e8dcc8]/50 rounded-full px-8 py-2 text-sm tracking-wider font-medium transition-all duration-300"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
           >
             View Location
@@ -515,19 +524,19 @@ export default function Component() {
         {/* Parents Section */}
         <div className="text-center space-y-6 mb-12 px-4">
           <p 
-            className="text-[#9b6b5c] text-sm tracking-wider italic"
+            className="text-[#5a3d32] text-sm tracking-wider italic"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
           >
             Son of Mr. & Mrs. Syed Imran Hussain
           </p>
           <p 
-            className="text-[#a47060] text-xl"
+            className="text-[#6b4a3c] text-xl"
             style={{ fontFamily: "Great Vibes, cursive" }}
           >
             together with
           </p>
           <p 
-            className="text-[#9b6b5c] text-sm tracking-wider italic"
+            className="text-[#5a3d32] text-sm tracking-wider italic"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
           >
             Daughter of Mr. & Mrs. Muhammad Amin
@@ -537,7 +546,7 @@ export default function Component() {
         {/* Countdown Section */}
         <div className="text-center space-y-6 mb-12">
           <p 
-            className="text-3xl text-[#9b6b5c]"
+            className="text-3xl text-[#5a3d32]"
             style={{ fontFamily: "Great Vibes, cursive" }}
           >
             Counting Down
@@ -549,15 +558,15 @@ export default function Component() {
               { value: timeLeft.minutes, label: "Mins" },
               { value: timeLeft.seconds, label: "Secs" },
             ].map(({ value, label }) => (
-              <div key={label} className="bg-white/60 backdrop-blur-sm rounded-lg p-3 shadow-sm">
+              <div key={label} className="bg-white/70 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-[#d4a5a5]/30">
                 <div 
-                  className="text-2xl font-light text-[#9b6b5c]" 
+                  className="text-2xl font-medium text-[#5a3d32]" 
                   style={{ fontFamily: "Cormorant Garamond, serif" }}
                 >
                   {value}
                 </div>
                 <div 
-                  className="text-xs text-[#a47060] tracking-wider uppercase"
+                  className="text-xs text-[#6b4a3c] tracking-wider uppercase font-medium"
                   style={{ fontFamily: "Cormorant Garamond, serif" }}
                 >
                   {label}
@@ -569,7 +578,7 @@ export default function Component() {
           <Button
             onClick={handleSaveTheDate}
             variant="outline"
-            className="border-[#d4a5a5] text-[#9b6b5c] hover:bg-[#e8dcc8]/50 rounded-full px-8 py-2 text-sm tracking-wider transition-all duration-300"
+            className="border-[#b8928a] text-[#5a3d32] hover:bg-[#e8dcc8]/50 rounded-full px-8 py-2 text-sm tracking-wider font-medium transition-all duration-300"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
           >
             Save The Date
@@ -577,15 +586,15 @@ export default function Component() {
         </div>
 
         {/* Islamic Quote */}
-        <div className="text-center space-y-4 mb-12 px-4 py-8 bg-white/40 backdrop-blur-sm rounded-2xl">
+        <div className="text-center space-y-4 mb-12 px-4 py-8 bg-white/60 backdrop-blur-sm rounded-2xl border border-[#d4a5a5]/20">
           <p 
-            className="text-[#9b6b5c] text-sm tracking-wider"
+            className="text-[#5a3d32] text-sm tracking-wider font-medium"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
           >
             Allah Subhanahu Wa Ta'ala says:
           </p>
           <p 
-            className="text-[#a47060] text-base leading-relaxed italic"
+            className="text-[#4a3228] text-base leading-relaxed italic"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
           >
             "And among His signs is that He created for you mates from among yourselves, 
@@ -593,7 +602,7 @@ export default function Component() {
             affection and mercy."
           </p>
           <p 
-            className="text-[#9b6b5c] text-xs tracking-[0.2em] uppercase"
+            className="text-[#5a3d32] text-xs tracking-[0.2em] uppercase font-medium"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
           >
             — Surah Ar-Rum (30:21)
@@ -603,20 +612,20 @@ export default function Component() {
         {/* RSVP Section */}
         <div className="text-center space-y-6 mb-12">
           <p 
-            className="text-3xl text-[#9b6b5c]"
+            className="text-3xl text-[#5a3d32]"
             style={{ fontFamily: "Great Vibes, cursive" }}
           >
             Kindly Respond
           </p>
           <p 
-            className="text-[#a47060] text-sm tracking-wider"
+            className="text-[#4a3228] text-sm tracking-wider font-medium"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
           >
             +92 311 8335838
           </p>
           <Button
             onClick={handleRSVPClick}
-            className="bg-[#a47060] hover:bg-[#9b6b5c] text-white rounded-full px-10 py-3 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 tracking-wider"
+            className="bg-[#6b4a3c] hover:bg-[#5a3d32] text-white rounded-full px-10 py-3 text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 tracking-wider"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
           >
             <span className="flex items-center gap-2">
@@ -631,32 +640,21 @@ export default function Component() {
         {/* Footer */}
         <div className="text-center space-y-6 pb-8">
           <p 
-            className="text-[#9b6b5c] text-sm tracking-wider italic"
+            className="text-[#5a3d32] text-sm tracking-wider italic"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
           >
             Your presence will add joy to our special day
           </p>
           <p 
-            className="text-2xl text-[#a47060]"
+            className="text-2xl text-[#6b4a3c]"
             style={{ fontFamily: "Amiri, serif" }}
           >
             ٱلْـحَـمْدُ لِلّٰهِ رَبِّ ٱلْعَٰلَمِينَ
           </p>
         </div>
 
-        {/* Bottom Floral Decoration */}
-        <div className="mt-8">
-          <img 
-            src="https://images.unsplash.com/photo-1518882605630-8eb7a60f9e26?w=800&q=80" 
-            alt="Floral decoration"
-            className="w-full h-40 object-cover object-center opacity-70 rounded-t-full"
-            style={{ 
-              maskImage: "linear-gradient(to top, black 50%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(to top, black 50%, transparent 100%)"
-            }}
-            crossOrigin="anonymous"
-          />
-        </div>
+        {/* Spacer for bottom padding */}
+        <div className="h-8" />
       </div>
     </div>
   )
