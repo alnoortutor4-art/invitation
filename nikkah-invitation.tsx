@@ -9,6 +9,22 @@ const Animations = () => (
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.9); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
       50%       { transform: scale(1.02); }
@@ -22,11 +38,34 @@ const Animations = () => (
       50% { opacity: 0.6; }
       100% { opacity: 0.3; }
     }
+    @keyframes gentleBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to   { opacity: 1; transform: scale(1); }
+    }
 
     .fade-in { animation: fadeIn 1s ease-out; }
+    .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+    .fade-in-scale { animation: fadeInScale 0.6s ease-out forwards; }
+    .slide-in-left { animation: slideInLeft 0.8s ease-out forwards; }
+    .slide-in-right { animation: slideInRight 0.8s ease-out forwards; }
     .pulse   { animation: pulse 3s ease-in-out infinite; }
     .float   { animation: float 4s ease-in-out infinite; }
     .shimmer { animation: shimmer 3s ease-in-out infinite; }
+    .gentle-bounce { animation: gentleBounce 2s ease-in-out infinite; }
+    .scale-in { animation: scaleIn 0.5s ease-out forwards; }
+    
+    .delay-100 { animation-delay: 0.1s; opacity: 0; }
+    .delay-200 { animation-delay: 0.2s; opacity: 0; }
+    .delay-300 { animation-delay: 0.3s; opacity: 0; }
+    .delay-400 { animation-delay: 0.4s; opacity: 0; }
+    .delay-500 { animation-delay: 0.5s; opacity: 0; }
+    .delay-600 { animation-delay: 0.6s; opacity: 0; }
+    .delay-700 { animation-delay: 0.7s; opacity: 0; }
+    .delay-800 { animation-delay: 0.8s; opacity: 0; }
   `}</style>
 )
 
@@ -226,8 +265,8 @@ export default function Component() {
           <audio ref={audioRef} preload="auto" />
         </div>
 
-        <div className="text-center space-y-10 max-w-md mx-auto relative z-10 fade-in">
-          <div className="space-y-2">
+        <div className="text-center space-y-10 max-w-md mx-auto relative z-10">
+          <div className="space-y-2 fade-in-up delay-100">
             <p 
               className="text-[#5a4a42] text-lg tracking-widest uppercase drop-shadow-sm"
               style={{ fontFamily: "Cormorant Garamond, serif" }}
@@ -239,19 +278,19 @@ export default function Component() {
           {/* Names in elegant script */}
           <div className="space-y-4">
             <h1
-              className="text-6xl md:text-7xl text-[#4a3a32] font-normal leading-tight drop-shadow-sm"
+              className="text-6xl md:text-7xl text-[#4a3a32] font-normal leading-tight drop-shadow-sm fade-in-up delay-200"
               style={{ fontFamily: "Great Vibes, cursive" }}
             >
               Usman
             </h1>
             <p 
-              className="text-3xl text-[#5a4a42] drop-shadow-sm"
+              className="text-3xl text-[#5a4a42] drop-shadow-sm fade-in-scale delay-300"
               style={{ fontFamily: "Great Vibes, cursive" }}
             >
               &
             </p>
             <h1
-              className="text-6xl md:text-7xl text-[#4a3a32] font-normal leading-tight drop-shadow-sm"
+              className="text-6xl md:text-7xl text-[#4a3a32] font-normal leading-tight drop-shadow-sm fade-in-up delay-400"
               style={{ fontFamily: "Great Vibes, cursive" }}
             >
               Shafaq
@@ -260,16 +299,16 @@ export default function Component() {
 
           {/* Arabic blessing */}
           <div
-            className="text-2xl text-[#5a4a42] font-normal tracking-wider drop-shadow-sm"
+            className="text-2xl text-[#5a4a42] font-normal tracking-wider drop-shadow-sm fade-in-up delay-500"
             style={{ fontFamily: "Amiri, serif" }}
           >
             ٱلْـحَـمْدُ لِلّٰهِ
           </div>
 
-          <div className="pt-4">
+          <div className="pt-4 fade-in-scale delay-600">
             <Button
               onClick={handleOpenInvitation}
-              className="bg-[#6b5548] hover:bg-[#5a4a42] text-white rounded-full px-12 py-4 text-base font-medium shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 tracking-wider"
+              className="bg-[#6b5548] hover:bg-[#5a4a42] text-white rounded-full px-12 py-4 text-base font-medium shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 tracking-wider gentle-bounce"
               style={{ fontFamily: "Cormorant Garamond, serif" }}
             >
               Open Invitation
@@ -300,7 +339,7 @@ export default function Component() {
         />
 
         <div className="text-center space-y-10 max-w-md mx-auto relative z-10">
-          <div className="relative pulse">
+          <div className="relative pulse fade-in-scale">
             <div className="w-48 h-48 mx-auto rounded-full bg-white/80 backdrop-blur-sm p-3 shadow-2xl ring-2 ring-[#d4a5a5]/40">
               <div className="w-full h-full rounded-full overflow-hidden">
                 <img
@@ -313,7 +352,7 @@ export default function Component() {
             </div>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 fade-in-up delay-200">
             <div 
               className="text-3xl text-[#9b6b5c] font-normal" 
               style={{ fontFamily: "Great Vibes, cursive" }}
@@ -351,24 +390,24 @@ export default function Component() {
       />
       
       {/* Left side floral PNG with gradient blend */}
-      <div className="fixed left-0 top-0 bottom-0 w-1/3 md:w-1/4 pointer-events-none z-0">
+      <div className="fixed left-0 top-0 bottom-0 w-2/5 md:w-1/3 pointer-events-none z-0 slide-in-left">
         <img 
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Purple%20And%20White%20Floral%20Wedding%20Invitation-YdOvTGAJpP8CyX4Z5ZG3QV60gFLstr.png"
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Purple%20And%20White%20Floral%20Wedding%20Invitation%20%281%29-YoDbOHHNQ9niuMQc5CIl0LK7HUm8e7.png"
           alt=""
           className="h-full w-full object-contain object-left"
           style={{
-            maskImage: "linear-gradient(to right, black 50%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to right, black 50%, transparent 100%)"
+            maskImage: "linear-gradient(to right, black 60%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to right, black 60%, transparent 100%)"
           }}
         />
       </div>
       
-      {/* Right side floral border PNG with gradient blend */}
-      <div className="fixed right-0 top-0 bottom-0 w-1/3 md:w-1/4 pointer-events-none z-0">
+      {/* Right side floral PNG (mirrored) with gradient blend */}
+      <div className="fixed right-0 top-0 bottom-0 w-2/5 md:w-1/3 pointer-events-none z-0 slide-in-right">
         <img 
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Purple%20Gold%20Aesthetic%20Watercolor%20Flower%20Wedding%20Invitation-Il0NXMgjPY56xfR0WIspOPUsqUT0Pw.png"
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Purple%20And%20White%20Floral%20Wedding%20Invitation%20%281%29-YoDbOHHNQ9niuMQc5CIl0LK7HUm8e7.png"
           alt=""
-          className="h-full w-full object-cover object-right"
+          className="h-full w-full object-contain object-right scale-x-[-1]"
           style={{
             maskImage: "linear-gradient(to left, black 60%, transparent 100%)",
             WebkitMaskImage: "linear-gradient(to left, black 60%, transparent 100%)"
@@ -409,7 +448,7 @@ export default function Component() {
       <div className="relative z-10 max-w-lg mx-auto px-6 py-12">
         
         {/* Header Section */}
-        <div className="text-center space-y-6 mb-12">
+        <div className="text-center space-y-6 mb-12 fade-in-up delay-100">
           <p 
             className="text-[#6b4a3c] text-sm tracking-[0.3em] uppercase font-medium"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
@@ -430,19 +469,19 @@ export default function Component() {
         {/* Names Section */}
         <div className="text-center space-y-4 mb-12">
           <h1
-            className="text-6xl md:text-7xl text-[#4a3228] font-normal leading-tight"
+            className="text-6xl md:text-7xl text-[#4a3228] font-normal leading-tight fade-in-up delay-200"
             style={{ fontFamily: "Great Vibes, cursive" }}
           >
             Syed Usman
           </h1>
           <p 
-            className="text-4xl text-[#6b4a3c]"
+            className="text-4xl text-[#6b4a3c] fade-in-scale delay-300"
             style={{ fontFamily: "Great Vibes, cursive" }}
           >
             &
           </p>
           <h1
-            className="text-6xl md:text-7xl text-[#4a3228] font-normal leading-tight"
+            className="text-6xl md:text-7xl text-[#4a3228] font-normal leading-tight fade-in-up delay-400"
             style={{ fontFamily: "Great Vibes, cursive" }}
           >
             Shafaq
@@ -450,7 +489,7 @@ export default function Component() {
         </div>
 
         {/* Date Section - Reference Style Layout */}
-        <div className="text-center space-y-6 mb-12">
+        <div className="text-center space-y-6 mb-12 fade-in-up delay-500">
           <p 
             className="text-[#6b4a3c] text-sm tracking-[0.4em] uppercase font-medium"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
@@ -476,7 +515,7 @@ export default function Component() {
               className="text-[#5a3d32] text-sm tracking-[0.2em] uppercase font-medium"
               style={{ fontFamily: "Cormorant Garamond, serif" }}
             >
-              Baad Asr
+              Baad Namaz e Asr
             </span>
             <div className="w-20 h-px bg-[#b8928a]" />
           </div>
@@ -490,7 +529,7 @@ export default function Component() {
         </div>
 
         {/* Venue Section */}
-        <div className="text-center space-y-4 mb-12">
+        <div className="text-center space-y-4 mb-12 fade-in-up delay-600">
           <p 
             className="text-[#5a3d32] text-base tracking-[0.2em] uppercase font-medium"
             style={{ fontFamily: "Cormorant Garamond, serif" }}
